@@ -2,14 +2,25 @@
 
 Test dataset: `2024_fb_ads_president_scored_anon.csv`, the 41-column Task 2 file.
 
-## Completed in the authoring environment
-- Pure Python script: **ran successfully** over all 246,745 records.
-- Pandas script: **ran successfully** over all 246,745 records.
-- Both report 41 columns, 4,475 page groups and 246,745 page/ad groups.
-- The three selected numeric columns matched for count, mean, min, max, sample standard deviation and median.
-- Missing-value counts matched, accounting for zero-valued keys omitted from one implementation's counter.
-- `python verify_results.py`: **PASS** for pure Python and Pandas.
+# Task 2 — Validation Results
 
+## Completed Validation
+
+All three analytical implementations—Pure Python, Pandas, and Polars—were executed locally using the Task 2 Facebook Political Ads dataset.
+
+The dataset contained 246,745 records and 41 columns, with 4,475 `page_id` groups and 246,745 `page_id` + `ad_id` groups.
+
+The validation script returned:
+
+`PASS for pure_python, pandas, polars : dataset dimensions, numeric statistics, missing counts and group counts match.`
+
+This confirms consistency across all three implementations for the metrics tested.
+
+## Validation Limitations
+
+The validation script checks dataset dimensions, selected numerical statistics, missing-value counts, and grouped record counts. It does not exhaustively validate every categorical frequency or grouped monetary total.
+
+Grouped spending totals also require caution because the dataset includes multiple currencies without conversion.
 ## Final Validation Results
 
 All three analytical implementations—Pure Python, Pandas, and Polars—were successfully executed on the 2024 Facebook Political Ads dataset.
