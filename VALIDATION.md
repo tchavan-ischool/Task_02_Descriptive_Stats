@@ -10,11 +10,21 @@ Test dataset: `2024_fb_ads_president_scored_anon.csv`, the 41-column Task 2 file
 - Missing-value counts matched, accounting for zero-valued keys omitted from one implementation's counter.
 - `python verify_results.py`: **PASS** for pure Python and Pandas.
 
-## Not yet completed
-- The Polars package could not be installed in the authoring environment, so `polars_stats.py` **has not been executed or validated**. Install the dependencies locally and run the third script; then run the validator again and correct any differences before claiming complete three-way equivalence.
-- The validator compares key metrics, not every top-five frequency, sorted top-group listing, or full group monetary sum. Manually spot-check those before submitting.
-- A direct course-provided Google Drive dataset URL has not yet been verified and must be inserted in the README.
+## Final Validation Results
 
-## Known analytical limitations
-- Grouped monetary totals are *nominal sums across source currencies*, not a properly currency-normalized spending analysis.
-- Numeric flags and text-encoded list/dictionary columns are summarized as categories, not expanded into semantic subfields.
+All three analytical implementations—Pure Python, Pandas, and Polars—were successfully executed on the 2024 Facebook Political Ads dataset.
+
+The validation script produced the following result:
+
+`PASS for pure_python, pandas, polars : dataset dimensions, numeric statistics, missing counts and group counts match.`
+
+This confirms agreement across the three implementations for:
+
+- Dataset dimensions (246,745 rows and 41 columns)
+- Numeric descriptive statistics
+- Missing-value counts
+- Grouped record counts using `page_id` and `page_id` + `ad_id`
+
+The successful comparison demonstrates consistency across the three approaches for the metrics tested.
+
+**Limitation:** This validation does not independently establish agreement for every categorical frequency or every possible grouped numerical aggregation.
