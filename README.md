@@ -47,7 +47,7 @@ See [FINDINGS.md](FINDINGS.md) for interpretation and [REFLECTION.md](REFLECTION
 - Grouped analysis counts ad records and sums nominal `estimated_spend`. The grouped reporting is **not currency-normalized**. Do not interpret totals as USD when multiple currencies are present. `page_id` and `ad_id` are identifiers, not quantities.
 
 ## Validation status
-Pure Python and Pandas were executed on the complete Task 2 CSV and passed the included numeric/dimension/group-count validation. **Polars was not executed in the authoring environment** because the package was unavailable there; install `requirements.txt`, run it locally, and review/validate outputs before final submission. See [VALIDATION.md](VALIDATION.md).
+Pure Python and Pandas were executed on the complete Task 2 CSV and passed the included numeric/dimension/group-count validation. All three implementations—Pure Python, Pandas, and Polars—were executed successfully. The validation script confirmed agreement on dataset dimensions, numeric statistics, missing-value counts, and grouped record counts.
 
 ## Repository files
 - `pure_python_stats.py`: standard-library baseline
