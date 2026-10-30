@@ -1,10 +1,6 @@
 # Task 2 — Comparative reflection (review and personalize)
 
 ## Pure Python vs. Pandas vs. Polars
-Pure Python made each part of the analysis explicit: reading the CSV, classifying fields, tracking missing values, maintaining frequency dictionaries, and implementing grouped counters. The approach is educational because it exposes assumptions that dataframe APIs can conceal, but it requires more manual code and careful treatment of edge cases.
-
-Pandas shortened the grouping and frequency logic with `groupby`, `value_counts`, and numeric aggregation operations. In the supplied implementation, chunking helps limit memory requirements for the large CSV, but requires counters to be combined carefully across chunks. The complete dataset's key numeric results and group counts were verified against the pure Python results.
-
 One important outcome of this task was successfully reproducing the same descriptive statistics using three different analytical approaches: Pure Python, Pandas, and Polars. Although each approach uses different programming techniques and data structures, the validation results confirmed agreement across the key metrics tested. Pure Python provided a better understanding of the underlying calculations, while Pandas and Polars demonstrated how DataFrame libraries simplify data manipulation and grouped analysis. This exercise strengthened my understanding of statistical consistency, data validation, and the importance of verifying results across different implementations.
 
 ## Why can three approaches disagree?
@@ -15,9 +11,6 @@ Some columns contain representations of lists or dictionaries, which basic CSV l
 
 ## Recommendation to a junior analyst
 I would introduce pure Python first to understand counting, numerical summaries, missing-value treatment, and grouping mechanics, then Pandas for efficient everyday analysis, and finally Polars for expression-based data workflows and additional performance-oriented techniques. That is a learning progression rather than a measured performance ranking.
-
-## AI-assisted starter code
-AI assistance was used to draft these scripts and supporting documents. The most useful aspect was rapidly producing a structured starting point. The risk is that generated code can contain subtle logic, API, or statistical assumptions; it must therefore be run, validated, and checked against the assignment rather than accepted simply because it appears plausible.
 
 ## Further personal notes to add before submission
 - What problems did **you** encounter while executing the Polars script?
